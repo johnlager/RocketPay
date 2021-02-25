@@ -1,6 +1,8 @@
 defmodule Rocketpay do
 
   alias Rocketpay.Users.Create, as: UserCreate
+  alias Rocketpay.Accounts.Deposit
+
   @moduledoc """
   Rocketpay keeps the contexts that define your domain
   and business logic.
@@ -10,5 +12,6 @@ defmodule Rocketpay do
   """
 
   defdelegate create_user(params), to: UserCreate, as: :call
+  defdelegate deposit(params), to: Deposit, as: :call
 
 end
